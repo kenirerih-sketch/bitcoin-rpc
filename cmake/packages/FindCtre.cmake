@@ -17,9 +17,14 @@ endif()
 endif()
 
 find_package(PkgConfig QUIET)
-pkg_search_module(${DOCTEST_NAME} ctre)
+if(PkgConfig_FOUND)
+    pkg_search_module(${CTRE_NAME} QUIET ctre)
+endif()
+if(${CTRE_NAME}_FOUND)
+    set(CTRE_FOUND TRUE)
+endif()
 # Package data repository.
-if(USE_CTRE_NAME)
+if(USE_CTRE)
     set(FETCHCONTENT_QUIET off)
     get_filename_component(ctre_base "${CMAKE_CURRENT_SOURCE_DIR}/${THIRD_PARTY}/${PLATFORM_FOLDER_NAME}/${CTRE_NAME}"
         REALPATH BASE_DIR "${CMAKE_BINARY_DIR}")

@@ -17,8 +17,10 @@
 
 #if __has_include(<json/json.h>)
 #   include <json/json.h>
+#elif __has_include(<jsoncpp/json/json.h>)
+#   include <jsoncpp/json/json.h>
 #else
-#   error "Bitcoin's <json/json.h> was not found!"
+#   error "Bitcoin's jsoncpp headers (<json/json.h> or <jsoncpp/json/json.h>) were not found!"
 #endif
 
 

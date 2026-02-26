@@ -335,6 +335,8 @@ import std.compat; //Import C++ headers for C library facilities
 #    include <boost/json.hpp>
 # elif __has_include(<json/json.h>)
 #    include <json/json.h>
+# elif __has_include(<jsoncpp/json/json.h>)
+#    include <jsoncpp/json/json.h>
 #endif
 #endif
 

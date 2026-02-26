@@ -44,7 +44,7 @@ if(USE_OPENSSL)
     endif()
 
 endif()
-if(NOT OPENSSL_FOUND)
+if(USE_OPENSSL AND NOT OPENSSL_FOUND)
     message("Please install OpenSSL from system root first! Use [https://www.openssl.org/source/]")
     return()
 endif()
